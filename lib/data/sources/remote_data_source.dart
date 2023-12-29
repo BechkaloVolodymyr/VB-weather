@@ -53,3 +53,7 @@ class RemoteDataSource {
     }
   }
 }
+            // final response = await dio.get(
+            //     "https://api.openweathermap.org/data/2.5/weather?lat=49.3521932&lon=23.4279711&appid=5040a3c9d1f7218a503e57622235c6ec");
+            // print(response);
+            // fetchWeatherData();

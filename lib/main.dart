@@ -1,9 +1,16 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:weather/injector.dart';
 import 'package:weather/presentation/view/home_page.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runZonedGuarded(() async {
+      configureDependencies();
+      runApp(const MyApp());
+    }, (error, stack) {
+      // Handles uncaught asynchronous errors
+      print(error);
+    });
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -17,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Home Page'),
+      home: const MyHomePage(),
     );
   }
 }
