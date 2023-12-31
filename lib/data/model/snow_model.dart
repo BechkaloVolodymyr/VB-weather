@@ -1,18 +1,18 @@
 import 'package:json_annotation/json_annotation.dart';
 
-part 'rain_model.g.dart';
+part 'snow_model.g.dart';
 
 @JsonSerializable(createToJson: false)
-class RainModel {
+class SnowModel {
   @JsonKey(name: "1h")
   final double? oneH;
   @JsonKey(name: "3h")
   final double? threeH;
-  RainModel({
+  SnowModel({
     this.oneH,
     this.threeH,
   });
 
-  factory RainModel.fromJson(Map<String, dynamic> json) =>
-      _$RainModelFromJson(json);
+  factory SnowModel.fromJson(Map<String, dynamic> json) =>
+      _$SnowModelFromJson(json);
 }

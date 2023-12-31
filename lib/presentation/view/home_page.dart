@@ -34,8 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         actions: [
-          IconButton(
-              onPressed: () {}, icon: const Icon(Icons.swipe_right_alt_sharp))
+          IconButton(onPressed: () {}, icon: const Icon(Icons.gps_fixed))
         ],
         title: const Text("Whether"),
       ),

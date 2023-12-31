@@ -3,6 +3,7 @@ import 'package:weather/data/model/clouds_model.dart';
 import 'package:weather/data/model/coord_model.dart';
 import 'package:weather/data/model/main_model.dart';
 import 'package:weather/data/model/rain_model.dart';
+import 'package:weather/data/model/snow_model.dart';
 import 'package:weather/data/model/sys_model.dart';
 import 'package:weather/data/model/weather_model.dart';
 import 'package:weather/data/model/wind_model.dart';
@@ -19,6 +20,7 @@ class MainWetherModel {
   final int? dt;
   final CloudsModel? clouds;
   final RainModel? rain;
+  final SnowModel? snow;
   final WindModel? wind;
   final int? visibility;
   final MainModel? main;
@@ -35,6 +37,7 @@ class MainWetherModel {
     this.dt,
     this.clouds,
     this.rain,
+    this.snow,
     this.wind,
     this.visibility,
     this.main,
