@@ -11,8 +11,8 @@ class WhetherService {
     this._remoteDataSource,
   );
 
-  Future<MainWetherEntity> getWhether(String cityName) async {
-    final remoteWether = await _remoteDataSource.getWether(cityName);
+  Future<MainWetherEntity> getWhether(double lat, double lon) async {
+    final remoteWether = await _remoteDataSource.getWether(lat, lon);
     return MainWetherMapper.mapModel(remoteWether);
   }
 }

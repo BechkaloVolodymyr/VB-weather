@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:weather/domain/services/location_service.dart';
 import 'package:weather/domain/services/whether_service.dart';
 import 'package:weather/injector.dart';
 import 'package:weather/presentation/controllers/home_page_controller.dart';
@@ -18,7 +19,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
-    screenController = HomePageController(getIt<WhetherService>());
+    screenController =
+        HomePageController(getIt<WhetherService>(), getIt<LocationService>());
   }
 
   @override
@@ -34,7 +36,11 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.gps_fixed))
+          IconButton(
+              onPressed: () {
+                screenController.loadData(getMyWeather: true);
+              },
+              icon: const Icon(Icons.gps_fixed))
         ],
         title: const Text("Whether"),
       ),
@@ -47,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: CircularProgressIndicator(),
                 )
               : controller.state.loadingError
-                  ? Center(
+                  ? const Center(
                       child: Text("Error"),
                     )
                   : DecoratedBox(
