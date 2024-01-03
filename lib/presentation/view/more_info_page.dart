@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/domain/entities/main_wether_entity.dart';
+import 'package:weather/presentation/view/common/custom_image_network.dart';
 
 class MoreInfoPage extends StatelessWidget {
   const MoreInfoPage({super.key, this.mainWetherEntity});
@@ -37,11 +38,9 @@ class MoreInfoPage extends StatelessWidget {
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          const Icon(
-                            Icons.cloud_sharp,
-                            size: 60,
+                          CustomImageNetwork(
+                            imageName: mainWetherEntity?.weather?[0].icon ?? "",
                           ),
                           const SizedBox(
                             width: 5,
@@ -64,6 +63,26 @@ class MoreInfoPage extends StatelessWidget {
                         DateFormat('dd.MM.yyyy').format(DateTime.now()),
                         style: const TextStyle(fontSize: 20),
                       ),
+                      if (mainWetherEntity?.main?.tempMin != null)
+                        Text(
+                          "Min temperature: ${mainWetherEntity?.main?.tempMin.toString()} \u2103",
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                      if (mainWetherEntity?.main?.tempMax != null)
+                        Text(
+                          "Max temperature: ${mainWetherEntity?.main?.tempMax.toString()} \u2103",
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                      if (mainWetherEntity?.wind != null)
+                        Text(
+                          "Wind:${mainWetherEntity?.wind?.speed.toString()} m/s",
+                          style: const TextStyle(fontSize: 20),
+                        ),
+                      if (mainWetherEntity?.rain?.oneH != null)
+                        Text(
+                          "Rain:${mainWetherEntity?.rain?.oneH.toString()} h,mm",
+                          style: const TextStyle(fontSize: 20),
+                        ),
                       const SizedBox(
                         height: 30,
                       ),
