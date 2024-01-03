@@ -71,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   : controller.state.loadingError
                       ? Center(
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               const Text("Error"),
                               ElevatedButton(
