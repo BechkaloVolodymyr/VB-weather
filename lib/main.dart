@@ -9,7 +9,6 @@ void main() => runZonedGuarded(() async {
       runApp(const MyApp());
     }, (error, stack) {
       // Handles uncaught asynchronous errors
-      print(error);
     });
 
 class MyApp extends StatelessWidget {

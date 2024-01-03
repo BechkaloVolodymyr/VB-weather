@@ -3,6 +3,7 @@ import 'package:weather/data/model/clouds_model.dart';
 import 'package:weather/data/model/coord_model.dart';
 import 'package:weather/data/model/main_model.dart';
 import 'package:weather/data/model/rain_model.dart';
+import 'package:weather/data/model/snow_model.dart';
 import 'package:weather/data/model/sys_model.dart';
 import 'package:weather/data/model/weather_model.dart';
 import 'package:weather/data/model/wind_model.dart';
@@ -19,6 +20,7 @@ class MainWetherEntity with _$MainWetherEntity {
     int? dt,
     CloudsModel? clouds,
     RainModel? rain,
+    SnowModel? snow,
     WindModel? wind,
     int? visibility,
     MainModel? main,

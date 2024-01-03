@@ -13,6 +13,7 @@ class MainWetherMapper {
         dt: model.dt,
         clouds: model.clouds,
         rain: model.rain,
+        snow: model.snow,
         wind: model.wind,
         visibility: model.visibility,
         main: model.main,
