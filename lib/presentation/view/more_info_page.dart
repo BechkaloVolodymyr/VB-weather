@@ -13,7 +13,7 @@ class MoreInfoPage extends StatelessWidget {
         decoration: const BoxDecoration(
             image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage('assets/images/234.JPG'),
+          image: AssetImage('assets/images/456.JPG'),
         )),
         child: Padding(
           padding: const EdgeInsets.all(30.0),
@@ -22,7 +22,7 @@ class MoreInfoPage extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Container(
                   decoration: const BoxDecoration(
-                      color: Color.fromRGBO(172, 115, 106, 1),
+                      color: Color.fromRGBO(90, 139, 171, 1),
                       borderRadius: BorderRadius.all(Radius.circular(20))),
                   child: Column(
                     children: [
@@ -75,12 +75,12 @@ class MoreInfoPage extends StatelessWidget {
                         ),
                       if (mainWetherEntity?.wind != null)
                         Text(
-                          "Wind:${mainWetherEntity?.wind?.speed.toString()} m/s",
+                          "Wind: ${mainWetherEntity?.wind?.speed.toString()} m/s",
                           style: const TextStyle(fontSize: 20),
                         ),
                       if (mainWetherEntity?.rain?.oneH != null)
                         Text(
-                          "Rain:${mainWetherEntity?.rain?.oneH.toString()} h,mm",
+                          "Rain: ${mainWetherEntity?.rain?.oneH.toString()} h,mm",
                           style: const TextStyle(fontSize: 20),
                         ),
                       const SizedBox(
