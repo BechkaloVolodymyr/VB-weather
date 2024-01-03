@@ -1,16 +1,29 @@
-# weather
+# Flutter Weather App
 
-A new Flutter project.
+An application for displaying the weather in your city.
 
-## Getting Started
+## Installation
 
-This project is a starting point for a Flutter application.
+Use the terminal to clone project to install app.
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+git clone https://github.com/BechkaloVolodymyr/VB-weather.git
+```
+After that execute the following commands: 
+```bash
+flutter clean
+```
+```bash
+flutter pub get
+```
+```bash
+flutter packages pub run build_runner build --delete-conflicting-outputs
+```
+## How to run app
+You need a file to use this application, please contact the developer. 
+This file will need to be inserted into the root of the project.
+After that you will be able to run the apk either using visual studio or command.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+flutter run --dart-define-from-file=api-keys.json
+```
