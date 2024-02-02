@@ -1,11 +1,13 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:weather/injector.dart';
 import 'package:weather/presentation/view/home_page.dart';
 
 void main() => runZonedGuarded(() async {
       configureDependencies();
+      await Hive.initFlutter();
       runApp(const MyApp());
     }, (error, stack) {
       // Handles uncaught asynchronous errors

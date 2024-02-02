@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weather/domain/entities/main_wether_entity.dart';
-import 'package:weather/presentation/view/common/custom_image_network.dart';
+import 'package:weather/presentation/view/add_weather_location_page.dart';
+import 'package:weather/presentation/view/common/widget/custom_image_network.dart';
 
 class MoreInfoPage extends StatelessWidget {
   const MoreInfoPage({super.key, this.mainWetherEntity});
@@ -29,9 +30,38 @@ class MoreInfoPage extends StatelessWidget {
                       const SizedBox(
                         height: 30,
                       ),
-                      Text(
-                        mainWetherEntity?.name ?? "No Data",
-                        style: const TextStyle(fontSize: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          const SizedBox(
+                            width: 55,
+                          ),
+                          Expanded(
+                            child: Text(
+                              mainWetherEntity?.name ?? "No Data",
+                              style: const TextStyle(fontSize: 20),
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const AddWeatherLocationPage(
+                                    lat: "",
+                                    lon: "",
+                                  ),
+                                ),
+                              );
+                            },
+                            icon: const Icon(Icons.create),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.delete),
+                          ),
+                        ],
                       ),
                       const SizedBox(
                         height: 35,
